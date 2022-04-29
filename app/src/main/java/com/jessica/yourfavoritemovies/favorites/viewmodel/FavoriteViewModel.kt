@@ -51,6 +51,7 @@ class FavoriteViewModel(application: Application): AndroidViewModel(application)
                     if (result.id == resultFirebase?.id) {
                         resultSnapshot.ref.removeValue()
                         stateRemoveFavorite.value = result
+                        result.favorited = false
                     }
                 }
             }

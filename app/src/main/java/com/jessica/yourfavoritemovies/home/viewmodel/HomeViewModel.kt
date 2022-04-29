@@ -83,6 +83,8 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
                     val movieResult = dataSnapshot.getValue(Result::class.java)
                     movieResult.let { result ->
                         stateFavorite.value = result
+                        //TODO rever isso
+                        result?.favorited = true
                     }
                 }
 
