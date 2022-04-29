@@ -1,7 +1,8 @@
-package com.jessica.yourfavoritemovies
+package com.jessica.yourfavoritemovies.datasource
 
 import com.google.gson.GsonBuilder
-import com.jessica.yourfavoritemovies.Constants.BASE_URL
+import com.jessica.yourfavoritemovies.BuildConfig
+import com.jessica.yourfavoritemovies.util.Constants.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

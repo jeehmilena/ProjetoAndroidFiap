@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
-import com.jessica.yourfavoritemovies.MovieUtil
+import com.jessica.yourfavoritemovies.util.MovieUtil
 
 class AuthenticationViewModel(application: Application) : AndroidViewModel(application) {
     var loading: MutableLiveData<Boolean> = MutableLiveData()

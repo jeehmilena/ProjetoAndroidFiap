@@ -1,10 +1,10 @@
-package com.jessica.yourfavoritemovies
+package com.jessica.yourfavoritemovies.util
 
 import android.content.Context
 import android.util.Patterns
-import com.jessica.yourfavoritemovies.Constants.APP_KEY
-import com.jessica.yourfavoritemovies.Constants.EMPTY_STRING
-import com.jessica.yourfavoritemovies.Constants.UIID_KEY
+import com.jessica.yourfavoritemovies.util.Constants.APP_KEY
+import com.jessica.yourfavoritemovies.util.Constants.EMPTY_STRING
+import com.jessica.yourfavoritemovies.util.Constants.UIID_KEY
 
 object MovieUtil {
     fun saveUserId(context: Context, uiid: String?) {

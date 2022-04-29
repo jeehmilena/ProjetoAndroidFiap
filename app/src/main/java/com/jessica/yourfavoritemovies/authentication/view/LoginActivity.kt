@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
-import com.jessica.yourfavoritemovies.MovieUtil
+import com.jessica.yourfavoritemovies.util.MovieUtil
 import com.jessica.yourfavoritemovies.R
 import com.jessica.yourfavoritemovies.authentication.viewmodel.AuthenticationViewModel
 import com.jessica.yourfavoritemovies.databinding.ActivityLoginBinding

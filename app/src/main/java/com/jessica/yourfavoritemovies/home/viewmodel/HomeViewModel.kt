@@ -1,14 +1,13 @@
 package com.jessica.yourfavoritemovies.home.viewmodel
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.database.*
-import com.jessica.yourfavoritemovies.Constants.FAVORITES_PATH
-import com.jessica.yourfavoritemovies.MovieRepository
-import com.jessica.yourfavoritemovies.MovieUtil.getUserId
+import com.jessica.yourfavoritemovies.util.Constants.FAVORITES_PATH
+import com.jessica.yourfavoritemovies.datasource.MovieRepository
+import com.jessica.yourfavoritemovies.util.MovieUtil.getUserId
 import com.jessica.yourfavoritemovies.model.Result
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

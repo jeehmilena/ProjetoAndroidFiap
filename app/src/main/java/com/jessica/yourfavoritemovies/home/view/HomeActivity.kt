@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.firebase.ui.auth.AuthUI
 import com.google.android.material.snackbar.Snackbar
-import com.jessica.yourfavoritemovies.Constants.LANGUAGE_PT_BR
+import com.jessica.yourfavoritemovies.util.Constants.LANGUAGE_PT_BR
 import com.jessica.yourfavoritemovies.R
 import com.jessica.yourfavoritemovies.about.view.AboutActivity
 import com.jessica.yourfavoritemovies.adapter.MovieAdapter

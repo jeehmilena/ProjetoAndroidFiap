@@ -1,4 +1,4 @@
-package com.jessica.yourfavoritemovies
+package com.jessica.yourfavoritemovies.util
 
 object Constants {
     const val BASE_URL = "https://api.themoviedb.org/3/"

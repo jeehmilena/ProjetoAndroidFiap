@@ -1,4 +1,4 @@
-package com.jessica.yourfavoritemovies
+package com.jessica.yourfavoritemovies.datasource
 
 import com.jessica.yourfavoritemovies.model.Movie
 import retrofit2.http.GET

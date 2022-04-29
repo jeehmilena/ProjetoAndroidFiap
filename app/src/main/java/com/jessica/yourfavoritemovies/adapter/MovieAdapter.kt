@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.jessica.yourfavoritemovies.Constants.BASE_IMAGE_URL
+import com.jessica.yourfavoritemovies.util.Constants.BASE_IMAGE_URL
 import com.jessica.yourfavoritemovies.R
 import com.jessica.yourfavoritemovies.model.Result
 
