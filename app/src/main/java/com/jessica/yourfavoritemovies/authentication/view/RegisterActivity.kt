@@ -8,28 +8,31 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import com.jessica.yourfavoritemovies.MovieUtil.validateNameEmailPassword
-import com.jessica.yourfavoritemovies.R
-import com.jessica.yourfavoritemovies.home.view.HomeActivity
 import com.jessica.yourfavoritemovies.authentication.viewmodel.AuthenticationViewModel
-import kotlinx.android.synthetic.main.activity_register.*
+import com.jessica.yourfavoritemovies.databinding.ActivityRegisterBinding
+import com.jessica.yourfavoritemovies.home.view.HomeActivity
 
 class RegisterActivity : AppCompatActivity() {
     private val viewModel: AuthenticationViewModel by lazy {
         ViewModelProvider(this)[AuthenticationViewModel::class.java]
     }
 
+    private lateinit var binding: ActivityRegisterBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
+        binding = ActivityRegisterBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
-        btn_register.setOnClickListener {
-            val name = etv_email_register.text.toString()
-            val email = etv_email_register.text.toString()
-            val password = etv_password_register.text.toString()
+        binding.btnRegister.setOnClickListener {
+            val name = binding.etvNameRegister.text.toString()
+            val email = binding.etvEmailRegister.text.toString()
+            val password = binding.etvPasswordRegister.text.toString()
 
             when {
                 validateNameEmailPassword(name, email, password) -> {
-                    viewModel.registerUser(email,password)
+                    viewModel.registerUser(email, password)
                 }
             }
 
@@ -41,7 +44,7 @@ class RegisterActivity : AppCompatActivity() {
 
         viewModel.stateRegister.observe(this, Observer { state ->
             state?.let {
-               navigateToHome(it)
+                navigateToHome(it)
             }
         })
 
@@ -67,16 +70,16 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun showErrorMessage(message: String) {
-        Snackbar.make(btn_register, message, Snackbar.LENGTH_LONG).show()
+        Snackbar.make(binding.btnRegister, message, Snackbar.LENGTH_LONG).show()
     }
 
     private fun showLoading(status: Boolean) {
         when {
             status -> {
-                pb_register.visibility = View.VISIBLE
+                binding.pbRegister.visibility = View.VISIBLE
             }
             else -> {
-                pb_register.visibility = View.GONE
+                binding.pbRegister.visibility = View.GONE
             }
         }
     }

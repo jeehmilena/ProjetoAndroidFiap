@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:itemCount="3"
-        tools:listitem="@layout/item_recycler_view"/>
+        tools:listitem="@layout/item_recycler_view" />
 
     <ProgressBar
         android:id="@+id/pb_movies"

@@ -15,10 +15,10 @@ import com.jessica.yourfavoritemovies.R
 import com.jessica.yourfavoritemovies.about.view.AboutActivity
 import com.jessica.yourfavoritemovies.adapter.MovieAdapter
 import com.jessica.yourfavoritemovies.authentication.view.LoginActivity
+import com.jessica.yourfavoritemovies.databinding.ActivityHomeBinding
 import com.jessica.yourfavoritemovies.favorites.view.FavoritesActivity
 import com.jessica.yourfavoritemovies.home.viewmodel.HomeViewModel
 import com.jessica.yourfavoritemovies.model.Result
-import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
     private val viewModel: HomeViewModel by lazy {
@@ -31,12 +31,16 @@ class HomeActivity : AppCompatActivity() {
         )
     }
 
+    private lateinit var binding: ActivityHomeBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
-        rv_movies.adapter = adapter
-        rv_movies.layoutManager = GridLayoutManager(this, 2)
+        binding.rvMovies.adapter = adapter
+        binding.rvMovies.layoutManager = GridLayoutManager(this, 2)
         initViewModel()
         viewModel.getListMovies(LANGUAGE_PT_BR)
     }
@@ -78,7 +82,7 @@ class HomeActivity : AppCompatActivity() {
 
     private fun showMessageFavorite(result: Result) {
         Snackbar.make(
-            rv_movies,
+            binding.rvMovies,
             resources.getString(R.string.added_movie, result.title),
             Snackbar.LENGTH_LONG
         ).show()
@@ -87,16 +91,16 @@ class HomeActivity : AppCompatActivity() {
     private fun showLoading(status: Boolean) {
         when {
             status -> {
-                pb_movies.visibility = View.VISIBLE
+                binding.pbMovies.visibility = View.VISIBLE
             }
             else -> {
-                pb_movies.visibility = View.GONE
+                binding.pbMovies.visibility = View.GONE
             }
         }
     }
 
     private fun showErrorMessage(message: String) {
-        Snackbar.make(rv_movies, message, Snackbar.LENGTH_LONG).show()
+        Snackbar.make(binding.rvMovies, message, Snackbar.LENGTH_LONG).show()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

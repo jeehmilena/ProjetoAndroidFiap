@@ -9,33 +9,41 @@ import com.google.android.material.snackbar.Snackbar
 import com.jessica.yourfavoritemovies.MovieUtil
 import com.jessica.yourfavoritemovies.R
 import com.jessica.yourfavoritemovies.authentication.viewmodel.AuthenticationViewModel
+import com.jessica.yourfavoritemovies.databinding.ActivityLoginBinding
 import com.jessica.yourfavoritemovies.home.view.HomeActivity
-import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
     private val viewModel: AuthenticationViewModel by lazy {
         ViewModelProvider(this)[AuthenticationViewModel::class.java]
     }
 
+    private lateinit var binding: ActivityLoginBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
-        bt_login.setOnClickListener {
-            val email = etv_email.text.toString()
-            val password = etv_password.text.toString()
+        binding.btLogin.setOnClickListener {
+            val email = binding.etvEmail.text.toString()
+            val password = binding.etvPassword.text.toString()
 
             when {
                 MovieUtil.validateEmailPassword(email, password) -> {
                     viewModel.loginEmailPassword(email, password)
                 }
                 else -> {
-                    Snackbar.make(bt_login, resources.getString(R.string.login_failed), Snackbar.LENGTH_LONG).show()
+                    Snackbar.make(
+                        binding.btLogin,
+                        resources.getString(R.string.login_failed),
+                        Snackbar.LENGTH_LONG
+                    ).show()
                 }
             }
         }
 
-        tv_login_register.setOnClickListener {
+        binding.tvLoginRegister.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
         }
 
@@ -65,6 +73,6 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun showErrorMessage(message: String) {
-        Snackbar.make(bt_login, message, Snackbar.LENGTH_LONG).show()
+        Snackbar.make(binding.btLogin, message, Snackbar.LENGTH_LONG).show()
     }
 }

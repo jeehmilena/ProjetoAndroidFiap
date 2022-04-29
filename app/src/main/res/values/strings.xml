@@ -20,5 +20,7 @@
     <string name="notification_ok">OK!</string>
     <string name="removed_movie">Removed film - %s</string>
     <string name="added_movie">Movie added - %s</string>
+    <string name="time_de_desenvolvimento">Time de desenvolvimento</string>
+    <string name="desenvolvedores">CAROLINA CHIARADIA ROSA \n\nFILIPE PEREIRA COLAQUECEZ \n\nJÉSSICA MILENA CORRÊA DOS SANTOS</string>
 
 </resources>

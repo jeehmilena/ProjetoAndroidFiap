@@ -8,9 +8,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.jessica.yourfavoritemovies.adapter.MovieAdapter
 import com.jessica.yourfavoritemovies.R
+import com.jessica.yourfavoritemovies.databinding.ActivityFavoritesBinding
 import com.jessica.yourfavoritemovies.favorites.viewmodel.FavoriteViewModel
 import com.jessica.yourfavoritemovies.model.Result
-import kotlinx.android.synthetic.main.activity_favorites.*
 
 class FavoritesActivity : AppCompatActivity() {
     private var resultRemove = Result()
@@ -24,14 +24,19 @@ class FavoritesActivity : AppCompatActivity() {
         ViewModelProvider(this)[FavoriteViewModel::class.java]
     }
 
+    private lateinit var binding: ActivityFavoritesBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_favorites)
+        binding = ActivityFavoritesBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.title = resources.getString(R.string.action_favoritos)
-        rv_movies_favorites.adapter = adapter
-        rv_movies_favorites.layoutManager = LinearLayoutManager(this)
+        binding.rvMoviesFavorites.adapter = adapter
+        binding.rvMoviesFavorites.layoutManager = LinearLayoutManager(this)
         viewModel.getFavorites()
         initViewModel()
     }
@@ -63,7 +68,7 @@ class FavoritesActivity : AppCompatActivity() {
     private fun showMessageRemovedFavorite(result: Result){
         resultRemove = result
         Snackbar.make(
-            rv_movies_favorites,
+            binding.rvMoviesFavorites,
              resources.getString(R.string.removed_movie, result.title),
             Snackbar.LENGTH_LONG
         ).show()

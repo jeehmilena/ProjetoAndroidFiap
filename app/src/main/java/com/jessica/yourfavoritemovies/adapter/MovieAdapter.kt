@@ -28,6 +28,7 @@ class MovieAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.onBind(listMovie[position])
         holder.favorite.setOnClickListener {
+            listMovie[position].favorited = true
             holder.favorite.setImageDrawable(
                 ResourcesCompat.getDrawable(
                     holder.itemView.resources,
@@ -58,6 +59,24 @@ class MovieAdapter(
 
         fun onBind(result: Result) {
             title.text = result.title
+
+            if (result.favorited){
+                favorite.setImageDrawable(
+                    ResourcesCompat.getDrawable(
+                        itemView.resources,
+                        R.drawable.ic_favorite,
+                        null
+                    )
+                )
+            }else{
+                favorite.setImageDrawable(
+                    ResourcesCompat.getDrawable(
+                        itemView.resources,
+                        R.drawable.ic_favorite_yellow,
+                        null
+                    )
+                )
+            }
 
             Glide.with(itemView.context).load("$BASE_IMAGE_URL${result.posterPath}")
                 .placeholder(R.mipmap.ic_movie)

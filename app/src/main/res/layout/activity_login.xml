@@ -24,7 +24,8 @@
             android:selectAllOnFocus="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:autofillHints="emailAddress" />
 
         <EditText
             android:id="@+id/etv_password"
@@ -40,7 +41,8 @@
             android:selectAllOnFocus="true"
             app:layout_constraintEnd_toEndOf="@+id/etv_email"
             app:layout_constraintStart_toStartOf="@+id/etv_email"
-            app:layout_constraintTop_toBottomOf="@+id/etv_email" />
+            app:layout_constraintTop_toBottomOf="@+id/etv_email"
+            android:autofillHints="password" />
 
         <Button
             android:id="@+id/bt_login"
@@ -50,7 +52,7 @@
             android:layout_marginStart="@dimen/margin_24"
             android:layout_marginTop="@dimen/margin_24"
             android:layout_marginEnd="@dimen/margin_24"
-            android:backgroundTint="@color/oragne_c41c00"
+            android:backgroundTint="@color/teal_26c6da"
             android:text="@string/action_sign_in_short"
             app:layout_constraintEnd_toEndOf="@+id/etv_password"
             app:layout_constraintStart_toStartOf="@+id/etv_password"
