@@ -23,7 +23,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:autofillHints="name" />
 
         <EditText
             android:id="@+id/etv_email_register"
@@ -37,7 +38,8 @@
             android:selectAllOnFocus="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etv_name_register" />
+            app:layout_constraintTop_toBottomOf="@+id/etv_name_register"
+            android:autofillHints="emailAddress" />
 
         <EditText
             android:id="@+id/etv_password_register"
@@ -51,7 +53,8 @@
             android:selectAllOnFocus="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etv_email_register" />
+            app:layout_constraintTop_toBottomOf="@+id/etv_email_register"
+            android:autofillHints="password" />
 
         <Button
             android:id="@+id/btn_register"
@@ -60,7 +63,7 @@
             android:layout_marginStart="@dimen/margin_24"
             android:layout_marginTop="@dimen/margin_24"
             android:layout_marginEnd="@dimen/margin_24"
-            android:backgroundTint="@color/oragne_c41c00"
+            android:backgroundTint="@color/teal_26c6da"
             android:text="@string/register"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
