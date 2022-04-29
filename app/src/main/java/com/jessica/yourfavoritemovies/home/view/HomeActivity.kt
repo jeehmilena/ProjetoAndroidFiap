@@ -33,12 +33,6 @@ class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
 
-  //TODO rever isso
-    override fun onResume() {
-        super.onResume()
-        viewModel.getListMovies(LANGUAGE_PT_BR)
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)

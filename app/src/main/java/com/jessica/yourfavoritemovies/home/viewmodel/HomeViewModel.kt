@@ -1,6 +1,7 @@
 package com.jessica.yourfavoritemovies.home.viewmodel
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -31,6 +32,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
                 stateList.value = movieResult.results
                 loading.value = false
             } catch (ex: Exception) {
+                ex.message
                 errorMessage("It looks like we had a problem. Try later!")
             } finally {
                 loading.value = false
@@ -82,9 +84,8 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
 
                     val movieResult = dataSnapshot.getValue(Result::class.java)
                     movieResult.let { result ->
-                        stateFavorite.value = result
-                        //TODO rever isso
                         result?.favorited = true
+                        stateFavorite.value = result
                     }
                 }
 
