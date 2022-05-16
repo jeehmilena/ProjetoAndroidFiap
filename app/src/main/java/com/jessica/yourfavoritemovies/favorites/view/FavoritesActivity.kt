@@ -10,7 +10,7 @@ import com.jessica.yourfavoritemovies.adapter.MovieAdapter
 import com.jessica.yourfavoritemovies.R
 import com.jessica.yourfavoritemovies.databinding.ActivityFavoritesBinding
 import com.jessica.yourfavoritemovies.favorites.viewmodel.FavoriteViewModel
-import com.jessica.yourfavoritemovies.model.Result
+import com.jessica.yourfavoritemovies.data.remote.model.Result
 
 class FavoritesActivity : AppCompatActivity() {
     private var resultRemove = Result()

@@ -18,7 +18,7 @@ import com.jessica.yourfavoritemovies.authentication.view.LoginActivity
 import com.jessica.yourfavoritemovies.databinding.ActivityHomeBinding
 import com.jessica.yourfavoritemovies.favorites.view.FavoritesActivity
 import com.jessica.yourfavoritemovies.home.viewmodel.HomeViewModel
-import com.jessica.yourfavoritemovies.model.Result
+import com.jessica.yourfavoritemovies.data.remote.model.Result
 
 class HomeActivity : AppCompatActivity() {
     private val viewModel: HomeViewModel by lazy {

@@ -1,6 +1,6 @@
-package com.jessica.yourfavoritemovies.datasource
+package com.jessica.yourfavoritemovies.data.remote.api
 
-import com.jessica.yourfavoritemovies.model.Movie
+import com.jessica.yourfavoritemovies.data.remote.model.Movie
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -11,7 +11,7 @@ interface MovieAPI {
     }
 
     @GET(SOURCE)
-    suspend fun getApodDay(
+    suspend fun getMovie(
         @Query("api_key") api: String,
         @Query("language") language: String
     ): Movie

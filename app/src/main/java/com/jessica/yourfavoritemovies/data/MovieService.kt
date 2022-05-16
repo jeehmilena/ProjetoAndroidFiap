@@ -1,7 +1,8 @@
-package com.jessica.yourfavoritemovies.datasource
+package com.jessica.yourfavoritemovies.data
 
 import com.google.gson.GsonBuilder
 import com.jessica.yourfavoritemovies.BuildConfig
+import com.jessica.yourfavoritemovies.data.remote.api.MovieAPI
 import com.jessica.yourfavoritemovies.util.Constants.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

@@ -6,16 +6,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.database.*
 import com.jessica.yourfavoritemovies.util.Constants.FAVORITES_PATH
-import com.jessica.yourfavoritemovies.datasource.MovieRepository
+import com.jessica.yourfavoritemovies.data.remote.repository.MovieRepositoryImpl
 import com.jessica.yourfavoritemovies.util.MovieUtil.getUserId
-import com.jessica.yourfavoritemovies.model.Result
+import com.jessica.yourfavoritemovies.data.remote.model.Result
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-
 class HomeViewModel(application: Application) : AndroidViewModel(application) {
-    private val repository = MovieRepository()
+    private val repository = MovieRepositoryImpl()
     var stateList: MutableLiveData<List<Result>> = MutableLiveData()
     var error: MutableLiveData<String> = MutableLiveData()
     var loading: MutableLiveData<Boolean> = MutableLiveData()

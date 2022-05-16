@@ -10,7 +10,7 @@ import com.google.firebase.database.ValueEventListener
 import com.jessica.yourfavoritemovies.util.Constants.FAVORITES_PATH
 import com.jessica.yourfavoritemovies.util.Constants.ID_PATH
 import com.jessica.yourfavoritemovies.util.MovieUtil.getUserId
-import com.jessica.yourfavoritemovies.model.Result
+import com.jessica.yourfavoritemovies.data.remote.model.Result
 
 class FavoriteViewModel(application: Application): AndroidViewModel(application) {
     var stateRemoveFavorite: MutableLiveData<Result> = MutableLiveData()

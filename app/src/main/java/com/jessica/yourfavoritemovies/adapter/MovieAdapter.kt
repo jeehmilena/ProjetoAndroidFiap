@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.jessica.yourfavoritemovies.R
 import com.jessica.yourfavoritemovies.databinding.ItemRecyclerViewBinding
-import com.jessica.yourfavoritemovies.model.Result
+import com.jessica.yourfavoritemovies.data.remote.model.Result
 import com.jessica.yourfavoritemovies.util.Constants.BASE_IMAGE_URL
 
 class MovieAdapter(
